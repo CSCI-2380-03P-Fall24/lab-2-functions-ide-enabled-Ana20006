@@ -2,7 +2,6 @@
 #include <string>
 using namespace std; // making life easier so that we do not need to use std::cin , std::cout, etc.
 
-
 //Write the function called locateSmallest in the given interval such that 
 // output : int: index of the smallest value in the array
 // input : an array of int, the starting index of search, the ending point of searchspace
@@ -10,9 +9,24 @@ using namespace std; // making life easier so that we do not need to use std::ci
 // Note that I don't want the smallest value
 
 
-int locateSmallest(int array[], int start, int end){
+int locateSmallest(int array[], int start, int end){ // Esto se queda igual, se define los parametros
+
+ if (start < 0 || end < start) { //Aqui esta el rango aceptable
+
 	return -1; // fix this!
 }
+
+int minIndex = start;  // Aqui empieza minIndex como numero de inicio
+for (int i = start + 1; i <= end; ++i) {
+   if (array[i] < array[minIndex]) {
+	minIndex = i;  // Aqui se actuliza si el numero es mas chico
+   }
+}
+return minIndex; // Devuelve el numero mas chico 
+}
+
+	//return -1; // fix this! // Esto se queda igual 
+//}
 
 //Write the function called replaceVariable in the given interval such that 
 // output : you decide what is the output (here I put "void" - change this if you need to!)
@@ -20,34 +34,33 @@ int locateSmallest(int array[], int start, int end){
 //     an int which is the starting index of search,
 //     an int which is the ending point of searchspace
 // function: Search in the array from given start to end index and replace the given target value with 1000
-void replaceVariable() {
-	return;
+void replaceVariable(int array[], int target, int start, int end) {
+if (start < 0 || end < start){
+        return;
 }
+for (int i = start; i <= end; i++){
+   if(array[i]==target){
+	array[i] = 1000;
+   }
+
+}
+}
+	//return;
 
 
 
 //write a function called printArray to print out the elements of the given array
 //output: nothing
 //input: the array of integers and its size
-void printArray() {
+void printArray(int array[], int size) {
+   for(int i = 0; i < size; i++){
+        cout << array[i] << " ";
+
+   }
+cout << endl;
 	return;
 }
 
 
 
 
-
-
-
-
-//Write a function called sumOdds in the given interval such that 
-// output : integer
-// input : an array of int, the starting index of search, the ending point of searchspace
-// function: Sum the odd numbers in the given interval 
-//Hint: % is used for modulo operation. 
-//     n%m gives you the remainder after dividing n to m. for example 7%3 = 1 because 7 = 3*2 + 1, then 1 is the remainder.
-
-
-int sumOdds(int array[], int start, int end){
-	return -1;
-}
