@@ -2,9 +2,6 @@
 #include <string>
 using namespace std; // making life easier so that we do not need to use std::cin , std::cout, etc.
 
-#include <iostream> // Used for cin and cout
-#include <string>
-using namespace std; // Making life easier so that we do not need to use std::cin , std::cout, etc.
 
 // Write the function called locateSmallest in the given interval such that 
 // output : int: index of the smallest value in the array
